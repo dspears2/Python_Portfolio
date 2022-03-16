@@ -4,15 +4,21 @@ from django.shortcuts import render, HttpResponse
 
 
 def home(request):
-    return HttpResponse("This is the data")
+    #return HttpResponse("This is my homepage ")
+    context = {'name':"harry",'course': "Django"}
+    return render(request,'home.html',context)
 
 
-def paths(request):
-    # displays all paths on the website
-    # fetch all the data from the models
+def about(request):
+    #return HttpResponse("This is my about page ")
+    return render(request,'about.html')
 
-    context = {
-        'heading': "django tutorial 1",
-        'content': "this is the best tutorial on the plant"
-    }
-    return HttpResponse("This is a path view")
+
+def projects(request):
+    #return HttpResponse("This is my projects page ")
+    return render(request,'projects.html')
+
+
+def contact(request):
+    #return HttpResponse("This is my contact me page")
+    return render(request,'contact.html')
