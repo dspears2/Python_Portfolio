@@ -65,24 +65,25 @@
   <body>
     <div class="container"> 
       <h2 class="textcenter my-3"> Want to hire me?</h2>
+      <form action="/contact" method="post">
+        {%csrf_token %}
       <div class="mb-3">
         <div class="row my-2">
           <div class="col my-2">
-            <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+            <input type="text" id = "name" name="name"  class="form-control" placeholder="Full Name" aria-label="Full Name">
           </div>
-          <div class="col my-2">
-            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-          </div>
+          
         </div>
         <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input type="email" class="form-control" id="user_email" name="email" placeholder="name@example.com">
       </div>
       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
         <div class="d-grid gap-2 my-3">
-          <button type="button" class="btn btn-success">Submit</button>
+          <button type="submit" class="btn btn-success">Submit</button>
         </div>
+      </form>
     </div>
 
     <!-- Bootstrap JavaScript Libraries -->
