@@ -5,10 +5,10 @@ from home.models import Contact
 # Create your views here.
 
 
-def home(request):
+def index(request):
     #return HttpResponse("This is my homepage ")
     context = {'name':"harry",'course': "Django"}
-    return render(request,'home.html',context)
+    return render(request,'index.html',context)
 
 
 def about(request):
